@@ -1,0 +1,15 @@
+<From>{$app.settings.default_notification_address}</From>
+<FromName>{$app.settings.default_notification_name}</FromName>
+<Subject>Kirjautumistietosi ovat muuttuneet</Subject>
+<Body>
+Hei {$info.name|forHTML},<br>
+<br>
+Sinun "<a href="{$app.url.root}">{$app.url.root}</a>" kirjautumistietosi on muuttunut:<br>
+<br>
+Käyttäjänimi: <strong>{$info.username|forHTML}</strong><br>
+Salasana: <strong>{$info.password|forHTML}</strong><br>
+<br>
+Terveisin,<br>
+<br>
+{$app.settings.app_title|forHTML}
+</Body>
