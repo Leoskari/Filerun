@@ -1,0 +1,7 @@
+<Action>
+<div style="margin-top:3px;">
+	Arvoisa {$info.userInfo.username}:
+	Tilisi käyttötila on <strong>{$info.details.details.percent} percent</strong> täynnä.<br>
+	Saadaksesi lisää tilaa, ota yhteyttä support@leoskari.com.
+</div>
+</Action>

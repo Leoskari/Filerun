@@ -1,0 +1,16 @@
+<From>{$app.settings.default_notification_address}</From>
+<FromName>{$app.settings.default_notification_name}</FromName>
+<Subject>Tilin tiedot</Subject>
+<Body>
+Hei {$info.name|forHTML},<br>
+<br>
+Tili palveluun "<a href="{$app.url.root}">{$app.url.root}</a>" on luotu.<br>
+Voit kirjautua palveluun seuraavilla tiedoilla:<br>
+<br>
+Käyttäjänimi: <strong>{$info.username}</strong><br>
+Salasana: <strong>{$info.password}</strong><br>
+<br>
+Terveisin,<br>
+<br>
+<a href="{$app.url.root}">{$app.url.root}</a>
+</Body>

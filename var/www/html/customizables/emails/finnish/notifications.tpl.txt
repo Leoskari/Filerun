@@ -1,0 +1,13 @@
+<Subject>{$settings.app_title|safeHTML} notifications ({$info.actions[0].info.userInfo.name}: {$info.actions[0].info.actionDescription})</Subject>
+<Body>
+Hei {$info.userInfo.name},<br>
+<br>
+{foreach from=$info.actions item=action}
+{$action.message}
+{/foreach}
+<br>
+Terveisin,<br>
+<br>
+<a href="{$config.url.root}">
+{$config.url.root}</a>
+</Body>
