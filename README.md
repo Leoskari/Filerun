@@ -51,6 +51,7 @@ One last module which needs manual install is ionCube:
     sudo vim /etc/php/7.4/apache2/conf.d/00-ioncube.ini
 
 add:
+
     zend_extension = /usr/lib/php/ioncube/ioncube_loader_lin_7.4.so
 
 and: 
