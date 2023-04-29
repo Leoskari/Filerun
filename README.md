@@ -38,6 +38,7 @@ And add:
     phpinfo();
  
 Go to:
+
 - http://server_domain_or_IP/info.php
 
 ### Configuring PHP
@@ -55,15 +56,17 @@ add:
     zend_extension = /usr/lib/php/ioncube/ioncube_loader_lin_7.4.so
 
 and: 
+
     sudo vim /etc/php/7.4/apache2/conf.d/filerun.ini
 
 add: 
+
     expose_php              = Off
     error_reporting         = E_ALL & ~E_NOTICE
     display_errors          = Off
     display_startup_errors  = Off
     log_errors              = On
-    error_log               = "/home/leo/php_error.log"
+    error_log               = "/home/user/php_error.log"
     ignore_repeated_errors  = Off
     allow_url_fopen         = On
     allow_url_include       = Off
@@ -93,7 +96,7 @@ add:
 
  - Note: You can find the latest FileRun recommended PHP settings here: https://docs.filerun.com/php_configuration
 
-    sudo systemctl restart apache2
+        sudo systemctl restart apache2
 
 ### Installing FileRun
 
@@ -117,15 +120,16 @@ The system/data FileRun folder is the only folder where PHP needs write access.
     mysql -u root -p
 
  and:
+ 
     REVOKE ALTER, DROP ON filerun.* FROM 'filerun'@'localhost';
     FLUSH PRIVILEGES;
     exit
 
 - Note: You will need to add these permissions back before you will be installing any FileRun software update in the future. To do that, connect again to the database server and runt the following commands:
 
-GRANT  ALTER, DROP ON filerun.* TO 'filerun'@'localhost';
-FLUSH PRIVILEGES;
-exit;
+        GRANT  ALTER, DROP ON filerun.* TO 'filerun'@'localhost';
+        FLUSH PRIVILEGES;
+        exit;
 
 ### Home folder and Unraid share
 
@@ -134,9 +138,11 @@ exit;
     sudo vim /etc/fstab
 
 add:
+
     unraid        /unraid            9p         trans=virtio,version=9p2000.L,_netdev,rw 0 0
 
 and:
+
     sudo mount -a
 
 ### Installing ImageMagick and FFmpeg
@@ -155,6 +161,7 @@ and:
     sudo vim /etc/apache2/apache2.conf
 
  add:
+ 
     <Directory /var/www/>
             Options Indexes FollowSymLinks
             AllowOverride All
@@ -177,14 +184,17 @@ To enable this you need to uncheck the option “Instant email notifications” 
     vim auto_email.sh
 
  add:
+ 
     #bin/bash
     /usr/bin/php /var/www/html/cron/email_notifications.php filerun.leoskari.site
 
 and:  
+
     crontab -e
     * 12 * * * bash /root/auto_email.sh
 
 and:
+
     chmod +x auto_email.sh
 
 ### Server timezone
@@ -198,20 +208,20 @@ and:
 
 - https://www.apache.org/dyn/closer.lua/tika/2.6.0/tika-app-2.6.0.jar
     
-    java -version
-    sudo apt install openjdk-11-jre-headless
+        java -version
+        sudo apt install openjdk-11-jre-headless
  
  - Control panel → Searching → Apache tika
 
 add patch at control panel -> /home/leo//tika-app-2.6.0.jar
 and test settings
 
-    sudo su
-    crontab -e
+        sudo su
+        crontab -e
     
 - Every day at 12:00
 
-    * 12 * * * php /var/www/html/cron/process_search_index_queue.php
+        * 12 * * * php /var/www/html/cron/process_search_index_queue.php
 
 ### Plugins
 #### AES Crypt
