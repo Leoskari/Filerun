@@ -5,7 +5,7 @@
 <Body>
 Hei {$info.name},<br>
 <br>
-Kiitos palveluun rekisteröitymisestä<br>
+Kiitos palveluun rekisteröitymisestä.<br>
 <br>
 Tässä kirjautumistietosi:<br>
 <div style="padding:15px;background-color:whitesmoke;margin:15px 0px;border-radius:2px;line-height:20px;">
@@ -20,7 +20,7 @@ Kirjautuaksesi palveluun, seuraa linkkiä: <a href="{$config.url.root}">here</a>
 {if $settings.user_registration_approval}
 <br>
 <br>
-Tilisi ei ole vielä vahvistettu loppuun, vaan vaatii järjestelmän ylläpitäjän kuittausta rekisteröitymispyyntöön. Tämä tehdään manuaalisesti ja usein 24h sisällä. Saat erillisen viestin kun aktivointi suoritettu loppuun.
+Tilisi ei ole vielä vahvistettu loppuun, vaan vaatii järjestelmän ylläpitäjän kuittausta rekisteröitymispyyntöön. Tämä tehdään manuaalisesti ja usein 24h sisällä. Saat erillisen sähköpostin, jossa kerrotaan tietojesi muuttuneen, kun aktivointi on suoritettu loppuun.
 {/if}
 <br>
 <br>
